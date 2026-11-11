@@ -1,0 +1,48 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  color: #f1ead9;
+  background: #18292e;
+  --panel: #192d32;
+  --border: #52686a;
+  --muted: #c4d0c9;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { position: relative; height: 100vh; height: 100dvh; overflow: hidden; }
+#map { position: absolute; inset: 0; touch-action: none; }
+canvas { display: block; width: 100%; height: 100%; cursor: grab; outline-offset: -4px; }
+canvas:active { cursor: grabbing; }
+header, nav, #help, #status {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0a171d40;
+}
+header { position: absolute; inset: max(16px, env(safe-area-inset-top)) auto auto 20px; padding: 14px 20px; pointer-events: none; }
+h1 { margin: 0; font: 500 clamp(25px, 4vw, 39px)/1.08 Georgia, serif; }
+header p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+footer {
+  position: absolute;
+  inset: auto 20px max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+#help { margin: 0; padding: 10px 13px; color: var(--muted); font-size: 12px; }
+nav { display: flex; gap: 4px; padding: 5px; pointer-events: auto; }
+button { min-width: 42px; min-height: 44px; padding: 0 12px; border: 1px solid transparent; border-radius: 7px; color: inherit; background: transparent; font: 600 13px system-ui, sans-serif; cursor: pointer; white-space: nowrap; }
+button[aria-pressed="true"], button:hover:enabled { border-color: #8c9d8c; background: #31494a; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, canvas:focus-visible { outline: 2px solid #f0ce88; }
+#status { position: absolute; top: 48%; left: 50%; translate: -50% -50%; width: max-content; max-width: calc(100% - 36px); padding: 16px 20px; margin: 0; text-align: center; }
+@media (max-width: 570px) {
+  header { left: 12px; padding: 12px 15px; }
+  footer { left: 10px; right: 10px; justify-content: center; flex-direction: column; gap: 6px; }
+  nav { justify-content: center; }
+  #help { padding: 6px 9px; font-size: 11px; }
+  button { padding: 0 9px; }
+}

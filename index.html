@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Port Virelle in a read-only, interactive 3D map.">
+  <meta name="theme-color" content="#18292e">
+  <title>Port Virelle · 3D Map</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./viewer.css">
+  <script type="module" src="./viewer.js"></script>
+</head>
+<body>
+  <main>
+    <div id="map" role="region" aria-label="3D map of Port Virelle"></div>
+    <header><h1>Port Virelle</h1><p>Read-only 3D map</p></header>
+    <p id="status" role="status">Building the island…</p>
+    <footer>
+      <p id="help">Drag to orbit. Scroll or pinch to zoom.</p>
+      <nav aria-label="Map controls">
+        <button id="fit" type="button" disabled>Fit island</button>
+        <button id="top" type="button" aria-pressed="false" disabled>Top view</button>
+        <button id="pan" type="button" aria-pressed="false" disabled>Pan</button>
+        <button id="zoom-in" type="button" aria-label="Zoom in" disabled>+</button>
+        <button id="zoom-out" type="button" aria-label="Zoom out" disabled>−</button>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>
